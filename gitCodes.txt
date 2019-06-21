@@ -4,3 +4,11 @@
 4. git status
 5. git commit -m "Complete Chapter 1"  / -m => message demek
 6. git log
+7. git diff chapter.txt // eski chapterla olan farkliliklari gorebilirsin
+8. git checkout chapter.txt // eski yaptigin versiyona gitme	
+9. git remote add origin https:github.com/cyberturk01/"RepositoryName" // githuba yukler
+10.git push -u origin master
+
+touch .gitignore
+
+git rm --cached -r . /// butun eklenen dosyalari cikarir committen once yapilir
