@@ -1,4 +1,4 @@
-1. git init
+1. git init  //acilan dosyada bir git bolumu acar
 2. git status
 3. git add chapter.txt
 4. git status
@@ -9,6 +9,11 @@
 9. git remote add origin https:github.com/cyberturk01/"RepositoryName" // githuba yukler
 10.git push -u origin master
 
-touch .gitignore
-
-git rm --cached -r . /// butun eklenen dosyalari cikarir committen once yapilir
+GitIgnore olusturma= touch .gitignore
+Eklenen dosyalari cikarma= git rm --cached -r . /// butun eklenen dosyalari cikarir committen once yapilir
+CLonining = git clone https:github.com/cyberturk01/"RepositoryName" // hangi dosyayi indirmek istiyorsan
+Branch= git branch newBranchName //yeni bir dal ve kullanici olusturma icin kullanilir
+Branch Check = git branch  // Hangi branch aktiv gosterir.
+Kullanici veya Versiyon Degistirme= git checkout branchName
+Merge= git merge newBranchName // Master branch ta iken yeni branchin dosyalarini kullanmak icin kullanilir
+Push= git push -u origin master  // Master brancha son dosyayi gonderme
