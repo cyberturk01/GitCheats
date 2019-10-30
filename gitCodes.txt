@@ -3,6 +3,7 @@
 3. git add chapter.txt --> git add . --> git -all  // dosyalar eklenir Staging bolumune -->move to stage
 4. git status
 5. git commit -m "Complete Chapter 1"  // -m => message demek --> Staging to Local Repo committed!
+5. git commit -am "message" : --> stage and commit at the same time --> shorter version 
 6. git log --> Checks git history ==> git config --global alias.history "log --graph --oneline --decorate" // shortcut for ->git history
 7. git diff chapter.txt // eski chapterla olan farkliliklari gorebilirsin
 8. git checkout chapter.txt // eski yaptigin versiyona gitme	
