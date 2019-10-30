@@ -1,9 +1,9 @@
-1. git init  //acilan dosyada bir git bolumu acar
-2. git status
-3. git add chapter.txt
+1. git init  //acilan dosyada bir git bolumu acar   // Working Area --> Staging --> Local Repo --> Remote Repo
+2. git status // statuye bakar her seferinde yapilmali
+3. git add chapter.txt --> git add . --> git -all  // dosyalar eklenir Staging bolumune -->move to stage
 4. git status
-5. git commit -m "Complete Chapter 1"  / -m => message demek
-6. git log
+5. git commit -m "Complete Chapter 1"  // -m => message demek --> Staging to Local Repo committed!
+6. git log --> Checks git history ==> git config --global alias.history "log --graph --oneline --decorate" // shortcut for ->git history
 7. git diff chapter.txt // eski chapterla olan farkliliklari gorebilirsin
 8. git checkout chapter.txt // eski yaptigin versiyona gitme	
 9. git remote add origin https:github.com/cyberturk01/"RepositoryName" // githuba yukler
