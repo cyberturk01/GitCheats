@@ -20,3 +20,9 @@ Branch Check = git branch  // Hangi branch aktiv gosterir.
 Kullanici veya Versiyon Degistirme= git checkout branchName
 Merge= git merge newBranchName // Master branch ta iken yeni branchin dosyalarini kullanmak icin kullanilir
 Push= git push -u origin master  // Master brancha son dosyayi gonderme
+
+git branch demo --> yeni branch olusturu
+git checkout demo --> yeni brancha gecer
+Git from Branch(Demo) to Origin
+git push --set-upstream Origin Demo
+Siteden pull request yapilacak
