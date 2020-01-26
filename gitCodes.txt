@@ -12,17 +12,25 @@
 
 From Remote Repo 
 1. git clone https://github.com/cyberturk01/github.git --> write the cloning address
-GitIgnore olusturma= touch .gitignore
-Eklenen dosyalari cikarma= git rm --cached -r . /// butun eklenen dosyalari cikarir committen once yapilir
 CLonining = git clone https:github.com/cyberturk01/"RepositoryName" // hangi dosyayi indirmek istiyorsan
-Branch= git branch newBranchName //yeni bir dal ve kullanici olusturma icin kullanilir
-Branch Check = git branch  // Hangi branch aktiv gosterir.
-Kullanici veya Versiyon Degistirme= git checkout branchName
+
+Eklenen dosyalari cikarma= git rm --cached -r . /// butun eklenen dosyalari cikarir committen once yapilir
+
 Merge= git merge newBranchName // Master branch ta iken yeni branchin dosyalarini kullanmak icin kullanilir
 Push= git push -u origin master  // Master brancha son dosyayi gonderme
 
+#BRANCH
 git branch demo --> yeni branch olusturu
 git checkout demo --> yeni brancha gecer
 Git from Branch(Demo) to Origin
-git push --set-upstream Origin Demo
+git merge master --> branch icerisinde masterdaki son haline update yapar
+git push --set-upstream origin <branchName>
 Siteden pull request yapilacak
+Branch= git branch newBranchName //yeni bir dal ve kullanici olusturma icin kullanilir
+Branch Check = git branch  // Hangi branch aktiv gosterir.
+Kullanici veya Versiyon Degistirme= git checkout branchName
+
+
+#GitIgnore
+GitIgnore olusturma= touch .gitignore
+git config --global core.excludesfile ~/.gitignore_global
