@@ -1,0 +1,196 @@
+SELENIUM GRID
+
+1. What is Selenium Grid?
+Selenium Grid allows you to run the Test cases parallel across multiple machines. i.e running multiple tests at the same time against different machines, different browsers, and different operating systems. 
+
+2. What are the advantages of Selenium Grid?
+Selenium-Grid helps us to execute faster if we have many Test cases and if we are running then in parallel obviously the execution time will get reduced.
+We can run on different environments, one machine can be Unix based machine others can be a windows based machine. We can run it on Mac as well where we can keep the machines in parallel and run.
+Using selenium-grid we can perform cross-browser testing.
+Can run a single test on multiple browsers at the same time.
+Selenium-Grid supports distributed test execution. It allows running our tests in a distributed test execution environment.
+
+3. When can we go for Selenium-Grid?
+We can go for Selenium-Grid if we want to run the test cases faster or if we want to run them on different operating systems in parallel.
+
+4. By using Selenium-Grid we can record the Test cases from other machines? If possible how can we record?
+No, We cannot record the Test cases using Selenium-Grid.
+
+5. Explain how selenium Grid works?
+First Selenium Grid sent the tests to the hub and these tests will get redirected to Selenium Webdriver, which launch the browser and run the test. With entire test suite, it will run tests in parallel.
+
+6. Can we use Selenium-Grid for Performance Testing?
+Yes, we can use selenium-grid for Performance Testing.
+
+7.How to run tests in multiple browsers in parallel? Is there any other option other than selenium grid?
+You create a class with a method like below:
+
+public class BrowserLaunch {
+	WebDriver driver=null;
+	// Pass parameter browser from testng.xml
+	@Parameters(“browser”)
+	public void initiateBrowser(String browser){
+	// compare browser  information and then open respective browser
+	if(browser.equals(“Firefox”)){
+		driver = new FirefoxDriver();
+	}
+	else if{	
+		\\set path to the IE driver
+		System.setProperty(“webdriver.ie.driver”, “\iexploredriver.exe”);
+		driver =new InternetExplorerDriver();
+	}
+	else{
+		\\set path to the  Chrome driver
+		System.setProperty(“webdriver.chrome.driver”, “\chromedriver.exe”);
+		driver =new ChromeDriver();
+	}
+}
+
+	//Now create ClassName class and call extend the above class
+	@Test
+	public class ClassName extends BrowserLaunch{
+
+		public void Gmail(){
+			driver.get(“http://www.gmail.com”);
+		}
+	}
+
+8. What is the component in Selenium-Grid which routes the selenese requests from the Test in Selenium-Grid?
+Selenium hub is the component in Selenium-Grid which routes the selenese requests from the Test.
+
+9. How can we execute for large test suites or test suites that must be run in multiple environments?
+We can execute test suites by using selenium-grid on multiple environments.
+
+10. What is the component which allocates selenium RC in Selenium-Grid?
+By using Hub we can allocate Selenium RC in a Selenium-Grid
+
+11. What is the default maximum number of browsers that can run in parallel on the node?
+Five is the default value assigned to a maximum number of browsers that can run in parallel on the node.
+
+12. What is the default port number assigned by the hub?
+4444 is the default port used by the hub.
+
+13. Dose Selenium-Grid support Test design for creating Test Cases?
+No, Selenium-Grid does not support Test design for creating Test Cases.
+
+14. What is the default timeout for selenium-grid?
+300 seconds is the default timeout for Selenium-Grid.
+
+15. Can we execute Selenium RC Tests cases or Selenium Webdriver Test cases in parallel using Selenium-Grid?
+Yes, we can execute Selenium RC Test cases or Selenium Web driver Test Cases in parallel using Selenium-Grid.
+
+16. Can we execute Selenium IDE Test cases using Selenium-Grid?
+No, We cannot execute Selenium IDE Test Cases using Selenium-Grid.
+
+17. What is the primary purpose of Selenium-Grid?
+The primary purpose of Selenium-Grid is parallel Test Execution.
+
+18. What are the two main elements present in Selenium-Grid?
+Hub and nodes are the two main elements in Selenium-Grid
+
+19. What is a hub?
+Hub is a computer which is the central point where we can load our tests.
+
+20. How many hubs does selenium-grid have?
+The selenium-grid has only one hub which is the master of the network.
+
+21. What is Selenium-Grid Node?
+Nodes are selenium instances which are used to run tests used by the hub.
+
+22. How many nodes does selenium-grid have?
+There can be one or more nodes in a selenium-grid.
+
+23. Which jar files we need to work with Selenium-Grid?
+We need to download and add following jar files to our selenium set up.
+
+selenium-grid-hub-standalone-.jar
+selenium-grid-remote-control-standalone-.jar
+selenium-grid-tools-standalone-.jar
+24. How do I start Selenium Grid hub from my machine?
+
+By setting up “ant” set up on our system we can able to work with the grid. Once we download selenium-grid, we navigate them to distribution directory and execute the following command
+
+ant launch-hub
+
+25. How do I start Selenium Grid Slave Server from my machine?
+We need to Navigate to download directory of Selenium gird and execute the following command – ant launch-remote-control. This would launch remote control server at port 555.
+
+26. How do I start Selenium grid slave on a different port than 5555?
+We can start selenium grid slave on a specific port by using the “-Dport” option followed by port number
+
+ant -Dport=1111 launch-remote-control
+ant -Dport=2222 launch-remote-control
+
+27. How do I specify an environment while starting grid slave machine?
+We can specify an environment using “-Denvironment” while starting selenium grid slave machine.
+ant -Denvironment=”Safari on Mac” launch-remote-control
+
+28. What are the additional logs available while working with Selenium grid?
+You can find Selenium grid hub logs in “log/hub.log” and Remote Control logs in “log/rc-*.log” folder.
+
+29.How do you start a hub in Selenium Grid?
+By running the following command from command-line we can start hub in Selenium-Grid
+java -jar selenium-server-standalone-xxxx.jar -role hub
+
+30. How do you start node in Selenium Grid?
+By running the following command from command-line we can start node in Selenium-Grid by using default parameters
+java -jar selenium-server-standalone-xxxx.jar -role node  -hub http://localhost:4444/grid/register
+
+31. How does Selenium grid hub keep in touch with RC slave machine?
+Selenium grid hub keeps polling all RC slaves at a predefined time to make sure that they are available for testing, then Selenium hub disconnects any unavailable RC slaves and makes it clear that any RC slave is not available for testing. The using the parameter called – “remoteControlPollingIntervalInSeconds” and is defined in “grid_configuration.yml” file.
+
+32. How can we run Selenium RC slave in single window mode?
+By using the following command we can run selenium RC slave in a single window mode
+
+ant -DseleniumArgs=”-singleWindow -debug” launch-remote-control
+
+33. How do I use Selenium Grid while using Java?
+By using java we can take advantage of parallel testing capabilities of TestNG to drive your Selenium grid tests.
+
+34. How can we verify whether the hub is running?
+We can verify whether the hub is running or not one is through the command prompt and the other was through a browser.
+
+35. How can we run test scripts on the Selenium-Grid?
+By using Desired capabilities and the RemoteWebDriver objects we can run test scripts on the Grid.
+
+36. How can we specify the browser and OS information in selenium-grid?
+DesiredCapabilities is used to set the browser type and the OS of our Node.
+DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+capabilities.setBrowserName(“chrome”);
+capabilities.setPlatform(Platform.WINDOWS);
+
+37. How the RemoteWebDriver object used in selenium-grid?
+RemoteWebDriver is used to select the Node on which we want to run our tests on a different machine.
+
+38. How to configure hub in selenium grid?
+Download Selenium Server Standalone jar file
+Launch the command prompt and navigate to the location where we placed the Selenium server jar file.
+Type the command at command prompt, java -jar selenium-server-standalone-xxx.jar -role hub
+Open the browser and navigate to http://localhost:4444, to verify whether the hub is running or not.
+
+39. How to configure a node in selenium-grid?
+Download Selenium Server on all our node machines.
+Go to Command Prompt and type IPCONFIG to find out the IP Address. Ex:http://192.168.1.164:4444
+Open Command Prompt to register hub machine with Node Machine, type 
+java -jar selenium-server-standalone-3.3.1.jar -role node-hub
+
+http://192.168.1.164:4444/grid/register-port 5555
+
+After executing the command to return to the Hub and navigate the URL http://localhost:4444 or http://192.168.1.164:4444
+
+-  How to set capabilities and browser types for Hub in Selenium Grid
+ 	//1. Defining desired caps
+        DesiredCapabilities cap=new DesiredCapabilities();
+        cap.setBrowserName("chrome");
+        cap.setPlatform(Platform.MAC);
+
+        //2. Chrome options definition
+        ChromeOptions options=new ChromeOptions();
+        options.merge(cap);
+
+        String hubUrl = "http://192.168.1.94:4444/wd/hub";
+        WebDriver driver=new RemoteWebDriver(new URL(hubUrl), options);
+
+        driver.get("http://freecrm.com");
+        System.out.println(driver.getTitle());
+        driver.quit();
